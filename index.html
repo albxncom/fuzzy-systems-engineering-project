@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Course Finder</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="images/favicon.png" />
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <div class="container pt-5">
+        <div class="row px-3">
+          <h1>Course Finder</h1>
+        </div>
+        <p class="lead">This application can be used to find a selection of courses of the JMCS that match the desired criterias. The results are computed by fuzzy etc..</p>
+        <!---
+        main-question: general
+        -->
+        <form>
+          <div class="main-question pt-4">
+            <h4>General Questions</h4>
+            <!---
+            sub-question: exercises
+            -->
+            <div class="sub-questions pt-2">
+              
+              <h6>1. To which track should the courses belong to?</h6>
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t0" name="tracks" id="track_1">
+                    <label class="form-check-label" for="track_1">
+                      General
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t1" name="tracks" id="track_2">
+                    <label class="form-check-label" for="track_2">
+                      Distributed Systems
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t2" name="tracks" id="track_3">
+                    <label class="form-check-label" for="track_3">
+                      Advanced Software Engineering
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t3" name="tracks" id="track_4">
+                    <label class="form-check-label" for="track_4">
+                      Advanced Information Processing
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t4" name="tracks" id="track_5">
+                    <label class="form-check-label" for="track_5">
+                      Logic
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t5" name="tracks" id="track_6">
+                    <label class="form-check-label" for="track_6">
+                      Information Systems and Decision Support
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="t6" name="tracks" id="track_7">
+                    <label class="form-check-label" for="track_7">
+                      Data Science
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm text-muted">
+                  <p><b>Explanation</b><br>Every course belongs to one or more tracks, specified at <a href="https://mcs.unibnf.ch">https://mcs.unibnf.ch</a>.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!---
+            sub-question: exercises
+            -->
+            <div class="sub-question pt-4">
+              <h6>2. Are you ok with mandatory exercises?</h6>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" required name="exercices_mandatory_ok" id="mand_exercies_yes" value="1">
+                  <label class="form-check-label" for="mand_exercies_yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" required name="exercices_mandatory_ok" id="mand_exercies_no" value="0">
+                  <label class="form-check-label" for="mand_exercies_no">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" required name="exercices_mandatory_ok" id="mand_exercies_na" value="-1">
+                  <label class="form-check-label" for="mand_exercies_na">No Answer</label>
+                </div>
+              </div>
+            </div>
+            <!---
+            sub-question: What languages would you prefer?
+            -->
+            <div class="sub-question pt-4">
+              <h6>3. What languages would you prefer?</h6>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="preferred_lang" id="preferred_lang_de" value="german" >
+                  <label class="form-check-label" for="preferred_lang_de" style="color:lightgray !important;">German</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="preferred_lang" id="preferred_lang_fr" value="french" >
+                  <label class="form-check-label" for="preferred_lang_fr" style="color:lightgray !important;">French</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" name="preferred_lang" id="preferred_lang_en" value="english" >
+                  <label class="form-check-label" for="preferred_lang_en" style="color:lightgray !important;">English</label>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!---
+          main-question: Language
+          -->
+          <div class="main-question pt-5">
+            <h4>Questions concerning the language</h4>
+            <!---
+            sub-question: What languages would you prefer?
+            -->
+            <div class="sub-questions pt-2">
+              
+              <h6>1. How important is the language of the lectures for you?</h6>
+              
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_1" value="1">
+                    <label class="form-check-label" for="imp_lang_lect_1"><small>Very important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_2" value="2">
+                    <label class="form-check-label" for="imp_lang_lect_2"><small>Important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_3" value="3">
+                    <label class="form-check-label" for="imp_lang_lect_3"><small>Moderat. important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_4" value="4">
+                    <label class="form-check-label" for="imp_lang_lect_4"><small>Slightly important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_5" value="5">
+                    <label class="form-check-label" for="imp_lang_lect_5"><small>Unimportant</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_lecture" id="imp_lang_lect_na" value="null">
+                    <label class="form-check-label" for="imp_lang_lect_na" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes how good the lecturers speak the language in which they holds the course as well as the learning material.</small></div>
+              
+            </div>
+            <!---
+            sub-question: 2. How important is the language of the exercises for you?
+            -->
+            <div class="sub-questions pt-4">
+              
+              <h6>2. How important is the language of the exercises for you?</h6>
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_1" value="1">
+                    <label class="form-check-label" for="imp_lang_exo_1"><small>Very important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_2" value="2">
+                    <label class="form-check-label" for="imp_lang_exo_2"><small>Important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_3" value="3">
+                    <label class="form-check-label" for="imp_lang_exo_3"><small>Moderat. important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_4" value="4">
+                    <label class="form-check-label" for="imp_lang_exo_4"><small>Slightly important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_5" value="5">
+                    <label class="form-check-label" for="imp_lang_exo_5"><small>Unimportant</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="language_exercises" id="imp_lang_exo_6" value="null">
+                    <label class="form-check-label" for="imp_lang_exo_6" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes how good the assistants speak the language in which they hold the exercise class as well as the exercise material.</small></div>
+              
+            </div>
+          </div>
+          <!---
+          main-question: contents
+          -->
+          <div class="main-question pt-5">
+            <h4>Questions concering the contents of the course</h4>
+            <!---
+            sub-question: 1. How important is it for you that the course is understandable?
+            -->
+            <div class="sub-questions pt-2">
+              
+              <h6>1. How important is it for you that the course is understandable?</h6>
+              
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_1" value="1">
+                    <label class="form-check-label" for="imp_understandbale_course_1"><small>Very important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_2" value="2">
+                    <label class="form-check-label" for="imp_understandbale_course_2"><small>Important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_3" value="3">
+                    <label class="form-check-label" for="imp_understandbale_course_3"><small>Moderat. important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_4" value="4">
+                    <label class="form-check-label" for="imp_understandbale_course_4"><small>Slightly important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_5" value="5">
+                    <label class="form-check-label" for="imp_understandbale_course_5"><small>Unimportant</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="understandability" id="imp_understandbale_course_6" value="null">
+                    <label class="form-check-label" for="imp_understandbale_course_6" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes that the contents are conveyed in an understandable way and the material is illustrated with examples.</small></div>
+              
+            </div>
+            <!---
+            sub-question: 2. How important is the language of the exercises for you?
+            -->
+            <div class="sub-questions pt-4">
+              
+              <h6>2. How difficult do you want the lectures and exercices to be?</h6>
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_1" value="1">
+                    <label class="form-check-label" for="imp_difficulty_1"><small>Very difficult</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_2" value="2">
+                    <label class="form-check-label" for="imp_difficulty_2"><small>Difficult</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_3" value="3">
+                    <label class="form-check-label" for="imp_difficulty_3"><small>Neutral</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_4" value="4">
+                    <label class="form-check-label" for="imp_difficulty_4"><small>Easy</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_5" value="5">
+                    <label class="form-check-label" for="imp_difficulty_5"><small>Very Easy</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="difficulty" id="imp_difficulty_6" value="null">
+                    <label class="form-check-label" for="imp_difficulty_6" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes how difficult it is to follow the exercise classes as well as how difficult the exercises are.</small></div>
+              
+            </div>
+            <!---
+            sub-question: How important is the commitment of the lecturers and assistants?
+            -->
+            <div class="sub-questions pt-2">
+              
+              <h6>3. How important is the commitment of the lecturers and assistants?</h6>
+              
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_1" value="1">
+                    <label class="form-check-label" for="imp_commitment_1"><small>Very important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_2" value="2">
+                    <label class="form-check-label" for="imp_commitment_2"><small>Important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_3" value="3">
+                    <label class="form-check-label" for="imp_commitment_3"><small>Moderat. important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_4" value="4">
+                    <label class="form-check-label" for="imp_commitment_4"><small>Slightly important</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_5" value="5">
+                    <label class="form-check-label" for="imp_commitment_5"><small>Unimportant</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="commitment" id="imp_commitment_6" value="null">
+                    <label class="form-check-label" for="imp_commitment_6" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes how well the lectureres and assistants listen to students' inputs and how responsive they are..</small></div>
+              
+            </div>
+          </div>
+          <!---
+          main-question: Language
+          -->
+          <div class="main-question pt-5">
+            <h4>Questions concering effort</h4>
+            <!---
+            sub-question: What languages would you prefer?
+            -->
+            <div class="sub-questions pt-2">
+              
+              <h6>1. How much effort are you willing to put into the course?</h6>
+              
+              <div class="row">
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_1" value="1">
+                    <label class="form-check-label" for="imp_effort_1"><small>None</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_2" value="2">
+                    <label class="form-check-label" for="imp_effort_2"><small>Only a little</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_3" value="3">
+                    <label class="form-check-label" for="imp_effort_3"><small>To some extent</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_4" value="4">
+                    <label class="form-check-label" for="imp_effort_4"><small>Rather much</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_5" value="5">
+                    <label class="form-check-label" for="imp_effort_5"><small>Very much</small></label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" required name="effort" id="imp_effort_6" value="null">
+                    <label class="form-check-label" for="imp_effort_6" checked><small>No Answer</small></label>
+                  </div>
+                </div>
+              </div>
+              <div><small class="text-muted"><b>Explanation</b>: This includes how much effort it requires to prepare a lecture, the after work and how much time is needed to solve the exercises.</small></div>
+              
+            </div>
+          </div>
+          <div class="mt-5" style="text-align:center">
+            <input type="submit" id="evaluate" class="btn btn-primary btn-lg" value="Evaluate my selection" />
+          </div>
+          <!---
+          results
+          -->
+        </form>
+      </div>
+      <div class="container cont_results">
+        <div class="row mt-5" style="border:1px solid black;border-radius:5px;">
+          <div class="col-sm">
+            <div class="results">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div><div class="my-3">
+        <p style="text-align:center;" class="text-muted"><small>UniFr - JMCS - Fuzzy Systems Engineering SA2021 | <a href="#" class="advancedView">Advanced View</a></small></p>
+      </div></div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
+    </body>
+  </html>

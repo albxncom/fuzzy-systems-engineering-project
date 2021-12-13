@@ -1,0 +1,15 @@
+$("input[name='tracks']").eq(0).prop("checked", true);
+$("input[name='tracks']").eq(1).prop("checked", true);
+$("input[name='tracks']").eq(2).prop("checked", true);
+$("input[name='tracks']").eq(3).prop("checked", true);
+$("input[name='tracks']").eq(4).prop("checked", true);
+$("input[name='preferred_lang']").eq(0).prop("checked", true);
+$("input[name='preferred_lang']").eq(1).prop("checked", true);
+$("input[name='preferred_lang']").eq(2).prop("checked", true);
+$("input[name='exercices_mandatory_ok']").eq(1).prop("checked", true);
+$("input[name='language_lecture']").eq(5).prop("checked", true);
+$("input[name='language_exercises']").eq(5).prop("checked", true);
+$("input[name='understandability']").eq(3).prop("checked", true);
+$("input[name='difficulty']").eq(1).prop("checked", true);
+$("input[name='commitment']").eq(2).prop("checked", true);
+$("input[name='effort']").eq(4).prop("checked", true);
